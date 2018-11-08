@@ -66,6 +66,7 @@ Object : equals()
 ArrayList : Object[] elementData
 ArrayList : size()
 @enduml
+{% endpuml %}
 ```
 
 or
@@ -80,3 +81,6 @@ or
     ```
 
 Plugin will pick up block body and replace it with generated base64 svg diagram.
+
+## RoadMap
+Support more about GraphViz's dot
