@@ -26,17 +26,14 @@ function _string2ImgAsync(str, GraphvizDotFile, PlantJar) {
             if (err) {
                 return console.log(err);
             }
-            // GRAPHVIZ_DOT="/usr/local/opt/graphviz/bin/dot"
-            // exec java -jar /usr/local/Cellar/plantuml/1.2018.12/libexec/plantuml.jar "$@"
-            // and run plantuml -help for more
-            // see https://github.com/vliejo/gitbook-plugin-local-plantuml/blob/master/index.js
-            childProcess.spawnSync("java", [
-                '-Djava.awt.headless=true',
+            // run plantuml -help for more
+            const args = [
                 '-jar', PlantJar,
-                '-t' + outputFormat,
-                '-graphvizdot', GraphvizDotFile,
+                '-D', 'java.awt.headless=true',
+                '-t' + outputFormat, '-graphvizdot', GraphvizDotFile,
                 tmpFile
-            ], function (err, stdout, stderr) {
+            ];
+            childProcess.execFile("java", args, function (err, stdout, stderr) {
                 if (err || stderr) {
                     console.log("err=");
                     console.log(stderr);
@@ -44,7 +41,6 @@ function _string2ImgAsync(str, GraphvizDotFile, PlantJar) {
                     reject(err || stdout)
                 } else {
                     const text = fs.readFileSync(tmpFile + '.' + outputFormat, 'utf8');
-                    console.log(text)
                     fs.unlinkSync(tmpFile);
                     fs.unlinkSync(tmpFile + '.svg');
                     const img = "<img src='data:image/svg+xml;base64," + new Buffer(text).toString('base64') + "'>";
@@ -75,11 +71,11 @@ module.exports = {
     }, hooks: {
         'page:before': async function processMermaidBlockList(page) {
             const mermaidRegex = /^```puml((.*[\r\n]+)+?)?```$/im;
-            console.log(mermaidRegex)
             var match;
             while ((match = mermaidRegex.exec(page.content))) {
                 var rawBlock = match[0];
                 var mermaidContent = match[1];
+                const KEY = 'puml';
                 const processed = "{% " + KEY + " %}\n" + mermaidContent + "{% end" + KEY + " %}\n"
                 page.content = page.content.replace(rawBlock, processed);
             }
