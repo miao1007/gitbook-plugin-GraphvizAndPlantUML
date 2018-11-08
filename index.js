@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const url = require('url');
-const PLUGIN_NAME = 'GraphvizAndPlantUML';
+const PLUGIN_NAME = 'graphviz-and-plant-uml';
 
 function getTmp() {
     const filename = 'foo' + crypto.randomBytes(4).readUInt32LE(0) + 'bar';
@@ -55,9 +55,11 @@ module.exports = {
     blocks: {
         puml: {
             process: function (block) {
-                console.log(block)
                 var GraphvizDotFile = this.config.get('pluginsConfig.' + PLUGIN_NAME + '.GraphvizDotFile');
                 var PlantJar = this.config.get('pluginsConfig.' + PLUGIN_NAME + '.PlantJar');
+                if (!PlantJar || !GraphvizDotFile){
+                    throw "Please fullfill GraphvizDotFile and PlantJar"
+                }
                 var body = block.body;
                 var src = block.kwargs.src;
                 if (src) {
