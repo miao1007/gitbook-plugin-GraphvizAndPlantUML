@@ -1,5 +1,5 @@
 {
-  "name": "gitbook-plugin-GraphvizAndPlantUML",
+  "name": "gitbook-plugin-graphviz-and-plantUML",
   "description": "Generate PlantUML with quick installation",
   "main": "index.js",
   "version": "1.0.1",
