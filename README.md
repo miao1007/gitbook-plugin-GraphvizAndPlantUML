@@ -36,9 +36,9 @@ then in your book.json
 
 ```json
 {
-  "plugins": ["GraphvizAndPlantUML"],
+  "plugins": ["graphviz-and-plant-uml"],
   "pluginsConfig": {
-    "GraphvizAndPlantUML": {
+    "graphviz-and-plant-uml": {
       "GraphvizDotFile": "/usr/local/opt/graphviz/bin/dot",
       "PlantJar": "/usr/local/Cellar/plantuml/1.2018.12/libexec/plantuml.jar"
     },
