@@ -15,11 +15,11 @@ Render GraphViz and PlantUML offline.
 
 ## Background
 
-Java is a cross-platform Virtual Machine, which is install on Mac/Linux by default.
-[Graphviz](https://www.graphviz.org) is open source graph visualization software. It has several main graph layout programs.
-[plantuml](http://plantuml.com/) can easily create UML Diagrams from simple textual description.
+* Java is a cross-platform Virtual Machine, which is install on Mac/Linux by default.
+* [Graphviz](https://www.graphviz.org) is open source graph visualization software. It has several main graph layout programs.
+* [plantuml](http://plantuml.com/) can easily create UML Diagrams from simple textual description.
 
-We need to create UML by tools above.
+We need above tools to create UML.
 
 ## Install
 
@@ -30,10 +30,9 @@ brew install graphviz
 brew install plantuml
 ```
 
-If your are other OS user, install manually on official network.
+If your are other OS user, install manually on official website.
 
 then in your book.json
-
 
 ```json
 {
