@@ -1,0 +1,33 @@
+{
+  "name": "gitbook-plugin-GraphvizAndPlantUML",
+  "description": "Generate PlantUML with quick installation",
+  "main": "index.js",
+  "version": "1.0.0",
+  "engines": {
+    "gitbook": ">=3.0.0"
+  },
+  "homepage": "https://github.com/miao1007/gitbook-plugin-GraphvizAndPlantUML",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miao1007/gitbook-plugin-GraphvizAndPlantUML.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gitbook-tester": "1.4.2"
+  },
+  "gitbook": {
+    "GraphvizAndPlantUML": {
+      "GraphvizDotDir": {
+        "type": "string",
+        "default": "",
+        "description": "Graphviz dot exec path(not null)"
+      },
+      "PlantDir": {
+        "type": "string",
+        "default": "",
+        "description": "Plant's jar dir"
+      }
+    }
+  },
+  "license": "Apache 2"
+}
