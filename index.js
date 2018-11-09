@@ -29,7 +29,8 @@ function _string2ImgAsync(str, GraphvizDotFile, PlantJar) {
             // run plantuml -help for more
             const args = [
                 '-jar', PlantJar,
-                '-D', 'java.awt.headless=true',
+                // fixed x11 problems on CentOS
+                '-Djava.awt.headless=true',
                 '-t' + outputFormat, '-graphvizdot', GraphvizDotFile,
                 tmpFile
             ];

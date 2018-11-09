@@ -7,21 +7,19 @@ Render GraphViz and PlantUML offline.
 ## How Does it work
 
 ```
-1. Your UML/Diagram string quote with plantuml/dot
+1. Your UML/Diagram string quote with PlantUML/DOT
 2. run exec file and get output
-3. SVG(XML)
+3. SVG(XML) file
 4. <img src='data:image/svg+xml;base64,xxxx'>
 ```
 
-## Background
+## PreInstall
 
 * Java is a cross-platform Virtual Machine, which is install on Mac/Linux by default.
 * [Graphviz](https://www.graphviz.org) is open source graph visualization software. It has several main graph layout programs.
 * [plantuml](http://plantuml.com/) can easily create UML Diagrams from simple textual description.
 
 We need above tools to create UML.
-
-## Install
 
 If your are Mac user, try with [brew](https://brew.sh/)
 
@@ -30,9 +28,12 @@ brew install graphviz
 brew install plantuml
 ```
 
-If your are other OS user, install manually on official website.
+If your are the other OS user, install them manually on official website or package manager(eg, yum install graphviz).
 
-then in your book.json
+
+## Install
+
+In your book.json
 
 ```json
 {
@@ -57,6 +58,7 @@ gitbook serve
 
 ### How to use it?
 
+
 ```
 {% puml %}
 @startuml
@@ -67,6 +69,8 @@ ArrayList : size()
 @enduml
 {% endpuml %}
 ```
+
+> `@startuml` and `@endpuml` are required or the image will fail to be generated.
 
 or
 
@@ -80,6 +84,8 @@ or
     ```
 
 Plugin will pick up block body and replace it with generated base64 svg diagram.
+
+> see more at Jetbrains's [Visualizing Diagrams](https://www.jetbrains.com/help/idea/markdown.html)
 
 ## RoadMap
 Support more about GraphViz's dot
