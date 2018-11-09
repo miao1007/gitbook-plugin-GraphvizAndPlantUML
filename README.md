@@ -1,5 +1,9 @@
 Render GraphViz and PlantUML offline.
 
+[![version](https://img.shields.io/npm/v/gitbook-plugin-graphviz-and-plant-uml.svg)](https://www.npmjs.com/package/gitbook-plugin-graphviz-and-plant-uml)
+[![download](https://img.shields.io/npm/dm/gitbook-plugin-graphviz-and-plant-uml.svg)](https://www.npmjs.com/package/gitbook-plugin-graphviz-and-plant-uml)
+
+
 ## Features
 * Generate PlantUML with quick installation
 * Zero npm dependency.
