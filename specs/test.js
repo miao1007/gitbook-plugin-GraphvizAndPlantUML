@@ -25,4 +25,7 @@ tester.builder()
     .create()
     .then(function (result) {
         assert(result[0].content === matched);
-    });
+    }).catch(e => {
+        console.log(e
+    )
+});

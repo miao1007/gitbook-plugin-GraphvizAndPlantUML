@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-graphviz-and-plant-uml",
   "description": "Generate PlantUML with quick installation",
   "main": "index.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "engines": {
     "gitbook": ">=3.0.0"
   },
@@ -14,6 +14,9 @@
   "dependencies": {},
   "devDependencies": {
     "gitbook-tester": "1.4.2"
+  },
+  "scripts": {
+    "test": "node specs/test.js"
   },
   "gitbook": {
     "graphviz-and-plant-uml": {
