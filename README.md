@@ -5,7 +5,7 @@ Render GraphViz and PlantUML offline.
 
 
 ## Features
-* Rendering PlantUML with quick installation.
+* Rendering PlantUML from local or server.
 * Support PDF exporting.
 * ZERO npm dependency.
 
@@ -18,6 +18,13 @@ Render GraphViz and PlantUML offline.
 
 
 ## Pre Installation
+
+### Server Side
+
+Nothing but same as <https://github.com/qjebbs/vscode-plantuml#requirements-for-plantumlserver-render>
+
+
+### Client Side
 
 * [Java](https://java.com) is a cross-platform Virtual Machine, which is install on Mac/Linux by default.
 * [Graphviz](https://www.graphviz.org) is open source graph visualization software. It has several main graph layout programs.
@@ -39,6 +46,27 @@ If your are the other OS user, install them manually on official website or pack
 
 In your book.json
 
+
+## Server Side Rendering
+
+Please keep in mind, if you want more about privacy/safety, please replace your own LOCAL render server.
+
+> HTTPS is NOT supported yet. Create your own server is preferred.
+
+```json
+{
+  "plugins": ["graphviz-and-plant-uml"],
+  "pluginsConfig": {
+    "graphviz-and-plant-uml": {
+      "Render": "PlantUMLServer",
+      "Server": "http://www.plantuml.com/plantuml"
+    }
+  }
+}
+```
+
+## Client Side Rendering
+
 ```json
 {
   "plugins": ["graphviz-and-plant-uml"],
@@ -46,10 +74,12 @@ In your book.json
     "graphviz-and-plant-uml": {
       "GraphvizDotFile": "/usr/local/opt/graphviz/bin/dot",
       "PlantJar": "/usr/local/Cellar/plantuml/1.2018.12/libexec/plantuml.jar"
-    },
+    }
   }
 }
 ```
+
+And all, finally
 
 then
 
@@ -88,5 +118,7 @@ or
     ```
 
 Plugin will pick up block body and replace it with generated base64 svg diagram.
+
+> `puml` and `plantuml` tags both work.
 
 > see more at Jetbrains's [Visualizing Diagrams](https://www.jetbrains.com/help/idea/markdown.html)

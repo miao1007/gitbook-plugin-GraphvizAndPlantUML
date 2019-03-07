@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-graphviz-and-plant-uml",
   "description": "Generate PlantUML with quick installation",
   "main": "index.js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "engines": {
     "gitbook": ">=3.0.0"
   },
