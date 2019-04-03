@@ -51,8 +51,6 @@ In your book.json
 
 Please keep in mind, if you want more about privacy/safety, please replace your own LOCAL render server.
 
-> HTTPS is NOT supported yet. Create your own server is preferred.
-
 ```json
 {
   "plugins": ["graphviz-and-plant-uml"],
