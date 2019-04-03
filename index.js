@@ -6,6 +6,7 @@ const crypto = require('crypto');
 const url = require('url');
 const PLUGIN_NAME = 'graphviz-and-plant-uml';
 const http = require("http");
+const https = require("https");
 
 
 function getTmp() {
@@ -82,7 +83,8 @@ function serverSideRendering(book, str, outputFormat) {
         const tmpFile = getTmp();
         var svgFile = tmpFile + '.' + outputFormat;
         const fileInputStream = fs.createWriteStream(svgFile);
-        http.get(realUrl, response => {
+        const protocol = realUrl.startsWith("https")? https : http;
+        protocol.get(realUrl, response => {
             var stream = response.pipe(fileInputStream);
             stream.on("finish", function() {
                 svg2img(book, svgFile).then(function (img) {
