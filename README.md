@@ -14,7 +14,7 @@ Render GraphViz and PlantUML offline.
 1. Your UML/Diagram string quote with PlantUML/DOT
 2. run exec file and get output
 3. SVG(XML) file
-4. <img src='data:image/svg+xml;base64,xxxx'>
+4. `<img src='data:image/svg+xml;base64,xxxx'>`
 
 
 ## Pre Installation
