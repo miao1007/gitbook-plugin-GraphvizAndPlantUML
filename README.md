@@ -49,7 +49,7 @@ In your book.json
 
 ## Server Side Rendering
 
-Please keep in mind, if you want more about privacy/safety, please replace your own LOCAL render server.
+Please keep in mind, if you want more about privacy/safety, please replace your own self-hosted render server.
 
 ```json
 {
